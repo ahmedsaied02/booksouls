@@ -31,7 +31,7 @@ export default function Layout() {
 }
 
 function NavSeparator() {
-	return <span className="w-[100px] select-none text-center font-extralight">X</span>;
+	return <div className="w-[100px] select-none text-center font-extralight">X</div>;
 }
 
 function NavItem({ to, children }: { to: string; children: React.ReactNode }) {
