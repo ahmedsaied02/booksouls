@@ -5,7 +5,7 @@ import About from "~/assets/about.svg?react";
 export default function Index() {
   return (
     <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.8" }}>
-      <h1 className="bg-primary">Welcome to Remix</h1>
+      
       <About width="100%" height="auto" />
       <ul>
         <li>
