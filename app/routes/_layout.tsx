@@ -31,14 +31,14 @@ export default function Layout() {
 }
 
 function NavSeparator() {
-	return <div className="w-[100px] select-none text-center font-extralight">X</div>;
+	return <div className="w-[100px] select-none text-center text-xs font-extralight">X</div>;
 }
 
 function NavItem({ to, children }: { to: string; children: React.ReactNode }) {
 	return (
 		<li
 			className={`
-				relative select-none text-2xl
+				relative select-none
 				before:absolute before:bottom-0 before:right-1/2 before:h-px before:w-0 before:bg-primary-text before:transition-[width] before:duration-500 before:ease-[ease]
 				after:absolute after:bottom-0 after:left-1/2 after:h-px after:w-0 after:bg-primary-text after:transition-[width] after:duration-500 after:ease-[ease]
 				hover:before:w-1/2
