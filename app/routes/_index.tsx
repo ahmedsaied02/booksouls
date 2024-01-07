@@ -1,16 +1,12 @@
 import type { MetaFunction } from "@remix-run/node";
 
-export const meta: MetaFunction = () => {
-  return [
-    { title: "New Remix App" },
-    { name: "description", content: "Welcome to Remix!" },
-  ];
-};
+import About from "~/assets/about.svg?react";
 
 export default function Index() {
   return (
     <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.8" }}>
-      <h1>Welcome to Remix</h1>
+      <h1 className="bg-primary">Welcome to Remix</h1>
+      <About width="100%" height="auto" />
       <ul>
         <li>
           <a
