@@ -1,6 +1,7 @@
 import { Link, Outlet } from "@remix-run/react";
 import { Search as SearchIcon } from "lucide-react";
 import LogoHeader from "~/assets/logo.header.svg?react";
+import { IconButton } from "~/components/IconButton";
 
 export default function Layout() {
 	return (
@@ -19,7 +20,9 @@ export default function Layout() {
 							<NavItem to="/library">Library</NavItem>
 						</ul>
 					</nav>
-					<SearchButton className="absolute bottom-0 right-8 top-0" />
+					<IconButton className="absolute right-6 top-1/2 -translate-y-1/2">
+						<SearchIcon />
+					</IconButton>
 				</div>
 			</header>
 			<main>
@@ -31,7 +34,7 @@ export default function Layout() {
 }
 
 function NavSeparator() {
-	return <div className="w-[100px] select-none text-center text-xs font-extralight">X</div>;
+	return <div className="w-[100px] select-none text-center text-[8px] font-extralight">X</div>;
 }
 
 function NavItem({ to, children }: { to: string; children: React.ReactNode }) {
@@ -47,14 +50,5 @@ function NavItem({ to, children }: { to: string; children: React.ReactNode }) {
 		>
 			<Link to={to}>{children}</Link>
 		</li>
-	);
-}
-
-function SearchButton({ className }: { className?: string }) {
-	// TODO: Implement search
-	return (
-		<button className={className}>
-			<SearchIcon />
-		</button>
 	);
 }
