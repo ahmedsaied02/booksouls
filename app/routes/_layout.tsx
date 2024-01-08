@@ -133,7 +133,7 @@ function EmailContactForm({ className }: { className?: string }) {
 			</label>
 			<div
 				className="
-					group flex border border-primary-text
+					flex border border-primary-text
 					focus-within:outline focus-within:outline-offset-2 focus-within:outline-primary-text
 				"
 			>
