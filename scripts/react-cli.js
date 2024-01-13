@@ -29,6 +29,11 @@ yargs(process.argv.slice(2))
 				process.exit(1);
 			}
 
+			if (/^[A-Za-z0-9]+$/.test(name) === false) {
+				console.error("Component name must be alphanumeric.");
+				process.exit(1);
+			}
+
 			const path = `./app/components/${name}.tsx`;
 			if (!overwrite && fs.existsSync(path)) {
 				console.error(`Component "${name}" already exists.`);
