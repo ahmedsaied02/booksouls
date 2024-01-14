@@ -1,8 +1,8 @@
 #!/usr/bin/env node
-import inquirer from "inquirer";
-import searchlist from "inquirer-search-list";
 import fs from "node:fs";
 import process from "node:process";
+import inquirer from "inquirer";
+import searchlist from "inquirer-search-list";
 import htmlTags from "./html-tags.js";
 
 inquirer.registerPrompt("search-list", searchlist);
@@ -51,8 +51,8 @@ const { tag } = await inquirer.prompt([
 ]);
 
 const code = `
-import React from "react";
 import PropTypes from "prop-types";
+import React from "react";
 
 export type ${name}Props = React.ComponentPropsWithRef<"${tag}">;
 

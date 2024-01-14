@@ -1,9 +1,9 @@
 import { Link, Outlet } from "@remix-run/react";
 import { Search as SearchIcon } from "lucide-react";
 import React from "react";
+import CrueltyFreeIcon from "~/assets/cruelty.free.svg?react";
 import footerLogo from "~/assets/logo.footer.svg";
 import headerLogo from "~/assets/logo.header.svg";
-import CrueltyFreeIcon from "~/assets/cruelty.free.svg?react";
 import { IconButton } from "~/components/IconButton";
 
 export default function Layout() {
