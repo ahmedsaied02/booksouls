@@ -1,9 +1,9 @@
 import { Link, Outlet } from "@remix-run/react";
 import { Search as SearchIcon } from "lucide-react";
 import React from "react";
-import CrueltyFreeIcon from "~/assets/cruelty.free.svg?react";
-import footerLogo from "~/assets/logo.footer.svg";
-import headerLogo from "~/assets/logo.header.svg";
+import CrueltyFreeIcon from "~/assets/cruelty-free.svg?react";
+import footerLogo from "~/assets/logo-footer.svg";
+import headerLogo from "~/assets/logo.svg";
 import { IconButton } from "~/components/IconButton";
 
 export default function Layout() {
@@ -84,7 +84,7 @@ function Footer() {
 	);
 }
 
-function FooterNav({ className = "" }: { className?: string }) {
+function FooterNav({ className }: { className: string }) {
 	return (
 		<nav className={`flex flex-grow justify-center gap-20 ${className}`}>
 			<section>
@@ -104,7 +104,7 @@ function FooterNav({ className = "" }: { className?: string }) {
 			<section>
 				<FooterSectionHeader>Other</FooterSectionHeader>
 				<ul>
-					<FooterNavItem to="about-ai">About AI</FooterNavItem>
+					<FooterNavItem to="/about-ai">About AI</FooterNavItem>
 				</ul>
 			</section>
 		</nav>
@@ -125,7 +125,7 @@ function FooterNavItem({ to, children }: { to: string; children: React.ReactNode
 	);
 }
 
-function EmailContactForm({ className }: { className?: string }) {
+function EmailContactForm({ className }: { className: string }) {
 	return (
 		<form className={className} onSubmit={(e) => e.preventDefault()}>
 			<label htmlFor="email" className="mb-1 block text-lg uppercase">
