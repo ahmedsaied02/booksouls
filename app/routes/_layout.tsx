@@ -1,5 +1,5 @@
 import { Link, Outlet } from "@remix-run/react";
-import { Search as SearchIcon } from "lucide-react";
+import { SearchIcon } from "lucide-react";
 import React from "react";
 import CrueltyFreeIcon from "~/assets/cruelty-free.svg?react";
 import footerLogo from "~/assets/logo-footer.svg";
@@ -99,12 +99,6 @@ function FooterNav({ className }: { className: string }) {
 				<ul>
 					<FooterNavItem to="/contact-us">Contact Us</FooterNavItem>
 					<FooterNavItem to="/faq">FAQ</FooterNavItem>
-				</ul>
-			</section>
-			<section>
-				<FooterSectionHeader>Other</FooterSectionHeader>
-				<ul>
-					<FooterNavItem to="/about-ai">About AI</FooterNavItem>
 				</ul>
 			</section>
 		</nav>
