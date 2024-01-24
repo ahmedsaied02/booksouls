@@ -4,12 +4,10 @@ export default {
 	theme: {
 		extend: {
 			colors: {
-				primary: {
+				brand: {
 					DEFAULT: "#253b6e",
-					text: "#d2ecf9",
-				},
-				secondary: {
-					DEFAULT: "#1891ac",
+					light: "#1891ac",
+					lightest: "#d2ecf9",
 				},
 			},
 			fontFamily: {

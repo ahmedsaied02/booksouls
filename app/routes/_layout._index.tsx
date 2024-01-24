@@ -28,14 +28,14 @@ export default function Page() {
 	const { featuredBooks } = useLoaderData<typeof loader>();
 	return (
 		<main>
-			<section className="flex flex-col items-center bg-primary text-primary-text">
+			<section className="text-brand-lightest bg-brand flex flex-col items-center">
 				<h1 className="mt-12 text-center text-6xl font-thin uppercase">Get Engulfed</h1>
 				<Read className="mt-20" />
 				<LineGradient />
 			</section>
-			<section className="flex flex-col items-center bg-primary-text p-8 text-primary">
+			<section className="bg-brand-lightest text-brand flex flex-col items-center p-8">
 				<h1 className="text-center text-7xl font-medium uppercase">Featured Books</h1>
-				<p className="mt-2 text-7xl font-bold text-primary/20">X</p>
+				<p className="text-brand/20 mt-2 text-7xl font-bold">X</p>
 				<div className="mt-6 grid grid-cols-4 gap-10">
 					{featuredBooks.map((book) => (
 						<FeaturedBook key={book.id} book={book} />
@@ -81,7 +81,7 @@ function FeaturedBooksCarousel({ books }: { books: Book[] }) {
 		<div className="relative">
 			<div
 				ref={ref}
-				className="overflow-hidden bg-gradient-to-r from-primary to-secondary text-primary-text"
+				className="text-brand-lightest from-brand to-brand-light overflow-hidden bg-gradient-to-r"
 			>
 				<div className="flex items-center">
 					{books.map((book) => (
@@ -137,7 +137,7 @@ function FeaturedBooksCarouselItem({ book }: { book: Book }) {
 function FeaturedBooksCarouselIndicator({ active }: { active: boolean }) {
 	return (
 		<span
-			className={`h-2 w-2 rounded-full ${active ? "bg-primary-text" : "bg-primary-text/25"}`}
+			className={`h-2 w-2 rounded-full ${active ? "bg-brand-lightest" : "bg-brand-lightest/25"}`}
 			aria-current={active}
 		/>
 	);
