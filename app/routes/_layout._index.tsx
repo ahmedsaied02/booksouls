@@ -27,7 +27,7 @@ export function loader() {
 export default function Page() {
 	const { featuredBooks } = useLoaderData<typeof loader>();
 	return (
-		<>
+		<main>
 			<section className="flex flex-col items-center bg-primary text-primary-text">
 				<h1 className="mt-12 text-center text-6xl font-thin uppercase">Get Engulfed</h1>
 				<Read className="mt-20" />
@@ -43,7 +43,7 @@ export default function Page() {
 				</div>
 			</section>
 			<FeaturedBooksCarousel books={featuredBooks.slice(0, 4)} />
-		</>
+		</main>
 	);
 }
 
@@ -53,8 +53,6 @@ function FeaturedBook({ book }: { book: Book }) {
 			<img
 				src={placeholder}
 				alt={`The book "${book.name}"`}
-				width={200}
-				height={300}
 				className="h-[300px] w-[200px] rounded-xl object-cover shadow-md"
 			/>
 			<p className="mt-2 text-center text-xl">{book.name}</p>
@@ -90,11 +88,11 @@ function FeaturedBooksCarousel({ books }: { books: Book[] }) {
 						<FeaturedBooksCarouselItem key={book.id} book={book} />
 					))}
 				</div>
-				<div className="my-4 flex justify-center gap-4">
-					{books.map((_, i) => (
-						<FeaturedBooksCarouselIndicator key={i} active={i === index} />
-					))}
-				</div>
+			</div>
+			<div className="absolute bottom-4 left-1/2 flex -translate-x-1/2 justify-center gap-4">
+				{books.map((_, i) => (
+					<FeaturedBooksCarouselIndicator key={i} active={i === index} />
+				))}
 			</div>
 			<IconButton
 				disabled={index === 0}
@@ -122,12 +120,10 @@ function FeaturedBooksCarousel({ books }: { books: Book[] }) {
 
 function FeaturedBooksCarouselItem({ book }: { book: Book }) {
 	return (
-		<div key={book.id} className="flex flex-[0_0_100%] items-center justify-center gap-12 p-6">
+		<div key={book.id} className="flex flex-[0_0_100%] items-center justify-center gap-12 p-12">
 			<img
 				src={placeholder}
-				alt={`The book "${book.name}"`}
-				width={250}
-				height={375}
+				alt={`Book "${book.name}"`}
 				className="h-[375px] w-[250px] rounded-xl object-cover shadow-md"
 			/>
 			<div className="max-w-xl">

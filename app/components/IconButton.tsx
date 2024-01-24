@@ -1,4 +1,3 @@
-import PropTypes from "prop-types";
 import React from "react";
 
 export type IconButtonProps = React.ComponentPropsWithRef<"button">;
@@ -21,7 +20,3 @@ export const IconButton: React.FC<IconButtonProps> = React.forwardRef((props, re
 });
 
 IconButton.displayName = "IconButton";
-
-IconButton.propTypes = {
-	className: PropTypes.string,
-};

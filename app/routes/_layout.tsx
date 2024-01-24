@@ -3,16 +3,14 @@ import { SearchIcon } from "lucide-react";
 import React from "react";
 import CrueltyFreeIcon from "~/assets/cruelty-free.svg?react";
 import footerLogo from "~/assets/logo-footer.svg";
-import headerLogo from "~/assets/logo.svg";
 import { IconButton } from "~/components/IconButton";
+import { Logo } from "~/components/Logo";
 
 export default function Layout() {
 	return (
 		<>
 			<Header />
-			<main>
-				<Outlet />
-			</main>
+			<Outlet />
 			<Footer />
 		</>
 	);
@@ -20,18 +18,18 @@ export default function Layout() {
 
 function Header() {
 	return (
-		<header className="flex flex-col items-center justify-center bg-primary text-primary-text">
-			<img src={headerLogo} alt="Book Souls logo" width={266} height={75} />
+		<header className="flex h-[--header-h] flex-col items-center justify-center bg-primary text-primary-text">
+			<Logo />
 			<div className="relative mt-4 w-full">
 				<nav>
 					<ul className="flex flex-row items-center justify-center">
-						<HeaderNavItem to="/">Home</HeaderNavItem>
+						<HeaderNavItem href="/">Home</HeaderNavItem>
 						<HeaderNavSeparator />
-						<HeaderNavItem to="/categories">Categories</HeaderNavItem>
+						<HeaderNavItem href="/categories">Categories</HeaderNavItem>
 						<HeaderNavSeparator />
-						<HeaderNavItem to="/authors">Authors</HeaderNavItem>
+						<HeaderNavItem href="/authors">Authors</HeaderNavItem>
 						<HeaderNavSeparator />
-						<HeaderNavItem to="/library">Library</HeaderNavItem>
+						<HeaderNavItem href="/library">Library</HeaderNavItem>
 					</ul>
 				</nav>
 				<IconButton className="absolute right-6 top-1/2 -translate-y-1/2">
@@ -46,11 +44,11 @@ function HeaderNavSeparator() {
 	return <div className="w-[100px] select-none text-center text-[8px] font-extralight">X</div>;
 }
 
-function HeaderNavItem({ to, children }: { to: string; children: React.ReactNode }) {
+function HeaderNavItem({ href, children }: { href: string; children: React.ReactNode }) {
 	return (
 		<li>
 			<Link
-				to={to}
+				to={href}
 				className="
 					relative select-none
 					before:absolute before:bottom-0 before:right-1/2 before:h-px before:w-0 before:bg-primary-text before:transition-[width] before:duration-500 before:ease-[ease]
@@ -90,15 +88,15 @@ function FooterNav({ className }: { className: string }) {
 			<section>
 				<FooterSectionHeader>About</FooterSectionHeader>
 				<ul>
-					<FooterNavItem to="/about">About Us</FooterNavItem>
-					<FooterNavItem to="/terms-and-privacy">Terms & Privacy</FooterNavItem>
+					<FooterNavItem href="/about">About Us</FooterNavItem>
+					<FooterNavItem href="/terms-and-privacy">Terms & Privacy</FooterNavItem>
 				</ul>
 			</section>
 			<section>
 				<FooterSectionHeader>Customer Care</FooterSectionHeader>
 				<ul>
-					<FooterNavItem to="/contact-us">Contact Us</FooterNavItem>
-					<FooterNavItem to="/faq">FAQ</FooterNavItem>
+					<FooterNavItem href="/contact-us">Contact Us</FooterNavItem>
+					<FooterNavItem href="/faq">FAQ</FooterNavItem>
 				</ul>
 			</section>
 		</nav>
@@ -109,10 +107,10 @@ function FooterSectionHeader({ children }: { children: React.ReactNode }) {
 	return <h3 className="text-lg uppercase">{children}</h3>;
 }
 
-function FooterNavItem({ to, children }: { to: string; children: React.ReactNode }) {
+function FooterNavItem({ href, children }: { href: string; children: React.ReactNode }) {
 	return (
 		<li className="mt-2">
-			<Link to={to} className="font-extralight hover:underline">
+			<Link to={href} className="font-extralight hover:underline">
 				{children}
 			</Link>
 		</li>

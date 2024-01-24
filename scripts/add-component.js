@@ -51,21 +51,15 @@ const { tag } = await inquirer.prompt([
 ]);
 
 const code = `
-import PropTypes from "prop-types";
 import React from "react";
 
 export type ${name}Props = React.ComponentPropsWithRef<"${tag}">;
 
 export const ${name}: React.FC<${name}Props> = React.forwardRef((props, ref) => {
-	// TODO:
 	return <${tag} ref={ref}></${tag}>;
 });
 
 ${name}.displayName = "${name}";
-
-${name}.propTypes = {
-	// TODO:
-};
 `.slice(1); // Remove leading newline
 
 fs.writeFileSync(path, code);
