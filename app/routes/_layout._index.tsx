@@ -97,20 +97,20 @@ function FeaturedBooksCarousel({ books }: { books: Book[] }) {
 				</div>
 			</div>
 			<IconButton
-				aria-disabled={index === 0}
+				disabled={index === 0}
 				className="
 					absolute left-6 top-1/2 -translate-y-1/2
-					aria-disabled:cursor-auto aria-disabled:text-neutral-300/[38%] aria-disabled:before:opacity-0
+					disabled:text-neutral-300/[38%] disabled:before:opacity-0
 				"
 				onClick={() => carousel?.scrollPrev()}
 			>
 				<ChevronLeftIcon />
 			</IconButton>
 			<IconButton
-				aria-disabled={index === books.length - 1}
+				disabled={index === books.length - 1}
 				className="
 					absolute right-6 top-1/2 -translate-y-1/2
-					aria-disabled:cursor-auto aria-disabled:text-neutral-300/[38%] aria-disabled:before:opacity-0
+					disabled:text-neutral-300/[38%] disabled:before:opacity-0
 				"
 				onClick={() => carousel?.scrollNext()}
 			>
